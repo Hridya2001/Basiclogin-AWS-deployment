@@ -54,17 +54,19 @@ Private subnet has no direct internet access.
 
 
 2. EC2 Instance for Backend
-Launch an EC2 instance in the public subnet.
+- Launch an EC2 instance in the public subnet.
 
-SSH into the instance.
+- SSH into the instance.
 
-Install Docker and Git.
+- Install Docker
 
 - Clone the GitHub repository:
+  
 bash
 git clone <this-repo-url>
 
 - Build and run the backend:
+  
 bash
 cd backend
 docker build -t backend-app .
