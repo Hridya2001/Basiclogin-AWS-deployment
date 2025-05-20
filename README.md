@@ -40,17 +40,17 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
 
 ## Setup Instructions
 1. Networking Setup (VPC & Subnets)
-Create a new VPC.
+- Create a new VPC.
 
-Add a public subnet (for EC2) and a private subnet (for RDS).
+- Add a public subnet (for EC2) and a private subnet (for RDS).
 
-Attach an Internet Gateway to the VPC.
+- Attach an Internet Gateway to the VPC.
 
-Configure route tables:
+- Configure route tables:
 
-Public subnet routes internet traffic through the IGW.
+- Public subnet routes internet traffic through the IGW.
 
-Private subnet has no direct internet access.
+- Private subnet has no direct internet access.
 
 
 2. EC2 Instance for Backend
@@ -73,6 +73,80 @@ docker build -t backend-app .
 docker run -d -p 5000:5000 backend-app
 ## Or
 node server.js
+
+
+3. RDS PostgreSQL Setup
+- Create an RDS PostgreSQL instance in the private subnet.
+
+- Ensure security group allows inbound connections from the EC2 instance.
+
+- Connect from EC2 using:
+  psql -h <RDS-endpoint> -U postgres -d postgres
+
+- Create database and user table:
+  sql
+  CREATE DATABASE myappdb;
+  \c myappdb
+  -- Create 'user' table as per backend requirements
+
+
+4. Hosting Frontend on S3
+- Build the frontend project:
+
+  bash
+  cd frontend
+  npm run build
+  Create an S3 bucket (e.g., my-bucket-frontend-2001).
+
+- Upload the build files to the bucket.
+
+- Enable static website hosting.
+
+- Set bucket policy to allow public read access for static files.
+
+
+5. Integration
+- Update frontend API URLs to point to the EC2 backend (e.g., http://<EC2-public-ip>:5000).
+
+- Ensure security groups and CORS policies allow communication between frontend and backend
+  
+
+## Errors Faced & Troubleshooting
+1. EC2 Instance Not Accessible via SSH
+
+  Cause: Security group missing inbound rule for port 22.
+  
+  Solution: Added SSH (port 22) rule for my IP in EC2 security group.
+
+2. Backend Not Reachable from Frontend
+  
+  Cause: EC2 security group missing inbound rule for port 5000.
+  
+  Solution: Added HTTP (port 5000) rule for 0.0.0.0/0 (for testing).
+  
+3. RDS Connection Refused
+
+  Cause: RDS security group not allowing inbound traffic from EC2.
+  
+  Solution: Modified RDS security group to allow inbound PostgreSQL (port 5432) from EC2’s security group.
+
+4. CORS Errors in Frontend
+
+  Cause: Backend did not allow requests from S3 frontend domain.
+  
+  Solution: Enabled CORS in backend server for S3 bucket URL.
+
+5. Database Table Not Found
+
+  Cause: user table was not created before running backend.
+  
+  Solution: Manually created the required table in PostgreSQL.
+
+
+## Credits
+Original repository cloned from [friend’s repo link here].
+
+AWS documentation and tutorials.
 
 
 
