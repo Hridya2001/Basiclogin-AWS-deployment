@@ -14,3 +14,14 @@ This project demonstrates how to deploy a full-stack web application on AWS with
 ## Architecture Diagram
 
 ![Architecture Diagram](Docs/Architecture.png)
+
+
+## Tools and Technologies Used
+
+- **AWS VPC** – for network isolation
+- **Amazon EC2** – to host the backend (Node.js)
+- **Amazon RDS (PostgreSQL)** – managed database service
+- **Amazon S3** – static website hosting for frontend
+- **Node.js** – backend application runtime
+- **Docker** – containerization of backend app
+- **psql** – PostgreSQL command-line tool
