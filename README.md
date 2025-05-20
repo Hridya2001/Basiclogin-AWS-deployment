@@ -73,6 +73,8 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   Or
   node server.js
 
+   ![Screenshot](Docs/backend.png)
+
 
 3. RDS PostgreSQL Setup
   - Create an RDS PostgreSQL instance in the private subnet.
@@ -88,6 +90,8 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
     \c myappdb
     -- Create 'user' table as per backend requirements
 
+     ![Screenshot](Docs/RDS.png)
+
 
 4. Hosting Frontend on S3
   - Build the frontend project:
@@ -102,6 +106,8 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   - Enable static website hosting.
   
   - Set bucket policy to allow public read access for static files.
+
+    ![Screenshot](Docs/Frontend-login.png)
 
 
 5. Integration
