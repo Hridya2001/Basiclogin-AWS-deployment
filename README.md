@@ -22,7 +22,6 @@ This project demonstrates how to deploy a full-stack web application on AWS with
 - **Amazon EC2** – to host the backend (Node.js)
 - **Amazon RDS (PostgreSQL)** – managed database service
 - **Amazon S3** – static website hosting for frontend
-- **Node.js** – backend application runtime
 - **Docker** – containerization of backend app
 - **psql** – PostgreSQL command-line tool
 
@@ -40,76 +39,76 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
 
 ## Setup Instructions
 1. Networking Setup (VPC & Subnets)
-- Create a new VPC.
-
-- Add a public subnet (for EC2) and a private subnet (for RDS).
-
-- Attach an Internet Gateway to the VPC.
-
-- Configure route tables:
-
-- Public subnet routes internet traffic through the IGW.
-
-- Private subnet has no direct internet access.
-
+  - Create a new VPC.
+  
+  - Add a public subnet (for EC2) and a private subnet (for RDS).
+  
+  - Attach an Internet Gateway to the VPC.
+  
+  - Configure route tables:
+  
+  - Public subnet routes internet traffic through the IGW.
+  
+  - Private subnet has no direct internet access.
+  
 
 2. EC2 Instance for Backend
-- Launch an EC2 instance in the public subnet.
-
-- SSH into the instance.
-
-- Install Docker
-
-- Clone the GitHub repository:
+  - Launch an EC2 instance in the public subnet.
   
-bash
-git clone <this-repo-url>
-
-- Build and run the backend:
+  - SSH into the instance.
   
-bash
-cd backend
-docker build -t backend-app .
-docker run -d -p 5000:5000 backend-app
-## Or
-node server.js
+  - Install Docker
+  
+  - Clone the GitHub repository:
+    
+  bash
+  git clone <this-repo-url>
+  
+  - Build and run the backend:
+    
+  bash
+  cd backend
+  docker build -t backend-app .
+  docker run -d -p 5000:5000 backend-app
+  Or
+  node server.js
 
 
 3. RDS PostgreSQL Setup
-- Create an RDS PostgreSQL instance in the private subnet.
-
-- Ensure security group allows inbound connections from the EC2 instance.
-
-- Connect from EC2 using:
-  psql -h <RDS-endpoint> -U postgres -d postgres
-
-- Create database and user table:
-  sql
-  CREATE DATABASE myappdb;
-  \c myappdb
-  -- Create 'user' table as per backend requirements
+  - Create an RDS PostgreSQL instance in the private subnet.
+  
+  - Ensure security group allows inbound connections from the EC2 instance.
+  
+  - Connect from EC2 using:
+    psql -h <RDS-endpoint> -U postgres -d postgres
+  
+  - Create database and user table:
+    sql
+    CREATE DATABASE myappdb;
+    \c myappdb
+    -- Create 'user' table as per backend requirements
 
 
 4. Hosting Frontend on S3
-- Build the frontend project:
-
-  bash
-  cd frontend
-  npm run build
-  Create an S3 bucket (e.g., my-bucket-frontend-2001).
-
-- Upload the build files to the bucket.
-
-- Enable static website hosting.
-
-- Set bucket policy to allow public read access for static files.
+  - Build the frontend project:
+  
+    bash
+    cd frontend
+    npm run build
+    Create an S3 bucket (e.g., my-bucket-frontend-2001).
+  
+  - Upload the build files to the bucket.
+  
+  - Enable static website hosting.
+  
+  - Set bucket policy to allow public read access for static files.
 
 
 5. Integration
-- Update frontend API URLs to point to the EC2 backend (e.g., http://<EC2-public-ip>:5000).
-
-- Ensure security groups and CORS policies allow communication between frontend and backend
+  - Update frontend API URLs to point to the EC2 backend (e.g., http://<EC2-public-ip>:5000).
   
+  - Ensure security groups and CORS policies allow communication between frontend and backend
+    
 
 ## Errors Faced & Troubleshooting
 1. EC2 Instance Not Accessible via SSH
