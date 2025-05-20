@@ -1,6 +1,5 @@
 # BasicLogin-AWS-deployment
 
-## Overview
 This project demonstrates how to deploy a full-stack web application on AWS with a public backend, a private database, and static frontend hosting using the following architecture,
 
 - Frontend: Static website hosted on Amazon S3
@@ -11,3 +10,7 @@ This project demonstrates how to deploy a full-stack web application on AWS with
 
 - Networking: AWS VPC with public and private subnets, route tables, and an Internet Gateway
 
+
+## Architecture Diagram
+
+![Architecture Diagram](Docs/Architecture.png)
