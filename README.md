@@ -37,3 +37,41 @@ Node.js application (from backend/ folder) running on an EC2 instance in the pub
 - Database:
 PostgreSQL RDS instance deployed in a private subnet. Only accessible from within the VPC (specifically, the EC2 backend).
 
+
+## Setup Instructions
+1. Networking Setup (VPC & Subnets)
+Create a new VPC.
+
+Add a public subnet (for EC2) and a private subnet (for RDS).
+
+Attach an Internet Gateway to the VPC.
+
+Configure route tables:
+
+Public subnet routes internet traffic through the IGW.
+
+Private subnet has no direct internet access.
+
+2. EC2 Instance for Backend
+Launch an EC2 instance in the public subnet.
+
+SSH into the instance.
+
+Install Docker and Git.
+
+Clone the GitHub repository:
+
+bash
+git clone <this-repo-url>
+
+Build and run the backend:
+
+bash
+cd backend
+docker build -t backend-app .
+docker run -d -p 5000:5000 backend-app
+# Or
+node server.js
+
+
+
