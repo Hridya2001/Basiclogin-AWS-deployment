@@ -52,6 +52,7 @@ Public subnet routes internet traffic through the IGW.
 
 Private subnet has no direct internet access.
 
+
 2. EC2 Instance for Backend
 Launch an EC2 instance in the public subnet.
 
@@ -59,18 +60,16 @@ SSH into the instance.
 
 Install Docker and Git.
 
-Clone the GitHub repository:
-
+- Clone the GitHub repository:
 bash
 git clone <this-repo-url>
 
-Build and run the backend:
-
+- Build and run the backend:
 bash
 cd backend
 docker build -t backend-app .
 docker run -d -p 5000:5000 backend-app
-# Or
+## Or
 node server.js
 
 
