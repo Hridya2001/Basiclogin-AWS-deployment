@@ -86,7 +86,7 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
     
       - (CREATE DATABASE myappdb;)
     
-      - (\c myappdb'''
+      - (\c myappdb
         
     -- Create 'user' table as per backend requirements
 
