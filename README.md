@@ -3,11 +3,8 @@
 This project demonstrates how to deploy a full-stack web application on AWS with a public backend, a private database, and static frontend hosting using the following architecture,
 
 - Frontend: Static website hosted on Amazon S3
-
 - Backend: Node.js application running on an EC2 instance (public subnet)
-
 - Database: PostgreSQL managed by Amazon RDS (private subnet)
-
 - Networking: AWS VPC with public and private subnets, route tables, and an Internet Gateway
 
 
@@ -54,7 +51,7 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   - Clone the GitHub repository:
     
   bash
-  git clone <this-repo-url>
+  git clone <https://github.com/sree33445/basiclogin.git>
   
   - Build and run the backend:
     
@@ -67,7 +64,7 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
 
   Mentioning the screenshot of the backend running on port http://65.2.141.28:5000 
    ![Screenshot](Docs/backend.png)
-**Notes: backend is running on http://65.2.141.28:5000**
+
 
 3. RDS PostgreSQL Setup
   - Create an RDS PostgreSQL instance in the private subnet.
@@ -81,7 +78,7 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
     -- Create 'user' table as per backend requirements
 
      ![Screenshot](Docs/RDS.png)
-**Notes: user detailes loaded on db**
+Notes: user detailes loaded on db
 
 4. Hosting Frontend on S3
   - Build the frontend project: 
@@ -95,10 +92,10 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   - Set bucket policy to allow public read access for static files.
 
     ![Screenshot](Docs/Frontend-login.png)
-**Notes: User login successful**
+Notes: User login successfull
 
 5. Integration
-  - Update frontend API URLs to point to the EC2 backend (e.g., http://<EC2-public-ip>:5000).
+  - Update frontend API URLs to point to the EC2 backend (http://<EC2-public-ip>:5000).
   - Ensure security groups and CORS policies allow communication between frontend and backend
     
 
@@ -111,10 +108,11 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
 | CORS Errors in Frontend            | Backend did not allow S3 domain                    | Enabled CORS for S3 bucket URL                                   |
 | Database Table Not Found           | `user` table not created before running backend    | Manually created the required table in PostgreSQL                |
 
+
 ## Credits
 **Original repository cloned from [https://github.com/sree33445/basiclogin.git].**
 
-**AWS documentation and tutorials.**
+AWS documentation and tutorials.
 
 
 
