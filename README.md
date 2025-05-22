@@ -78,15 +78,15 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
     
     ```bash
     
-    (psql -h <RDS-endpoint> -U postgres -d postgres)
+    psql -h <RDS-endpoint> -U postgres -d postgres
         
   - Create database and user table:
     
     ```sql
     
-    (CREATE DATABASE myappdb;)
+    CREATE DATABASE myappdb;
     
-    (\c myappdb)
+    \c myappdb
         
     -- Create 'user' table as per backend requirements
        CREATE TABLE users (
@@ -107,9 +107,9 @@ Notes: user detailes loaded on db
     
        cd frontend
         
-       (npm run build)
+       npm run build
         
-       (Create an S3 bucket (e.g., my-bucket-frontend-2001).
+       Create an S3 bucket (e.g., my-bucket-frontend-2001).
   
   - Upload the build files to the bucket.
   - Enable static website hosting.
