@@ -89,6 +89,12 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
     (\c myappdb)
         
     -- Create 'user' table as per backend requirements
+       CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+  );
 
     
 
