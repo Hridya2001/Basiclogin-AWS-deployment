@@ -82,11 +82,11 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
         
   - Create database and user table:
     
-    sql
+    ('''sql
     
-      - ('''CREATE DATABASE myappdb;''')
+      - (CREATE DATABASE myappdb;)
     
-      - ('''\c myappdb''')
+      - (\c myappdb''')
         
     -- Create 'user' table as per backend requirements
 
