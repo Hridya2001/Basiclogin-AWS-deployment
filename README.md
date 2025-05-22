@@ -57,15 +57,15 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   - Build and run the backend:
     
   bash
-       -  (cd backend)
+         (cd backend)
        
-       -  (docker build -t backend-app .)
+         (docker build -t backend-app .)
        
-       -  (docker run -d -p 5000:5000 backend-app)
+         (docker run -d -p 5000:5000 backend-app)
        
       Or
       
-       -  (node server.js)
+         (node server.js)
 
   Mentioning the screenshot of the backend running on port http://65.2.141.28:5000 
    ![Screenshot](Docs/backend.png)
