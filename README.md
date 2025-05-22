@@ -51,7 +51,8 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   - Clone the GitHub repository:
     
   bash
-      - git clone <https://github.com/sree33445/basiclogin.git>
+  
+      - (git clone <https://github.com/sree33445/basiclogin.git>)
   
   - Build and run the backend:
     
