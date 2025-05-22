@@ -86,7 +86,7 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
     
     (CREATE DATABASE myappdb;)
     
-    (\c myappdb)
+    (\c myappdb)```
         
     -- Create 'user' table as per backend requirements
 
@@ -96,7 +96,7 @@ Notes: user detailes loaded on db
 4. Hosting Frontend on S3
   - Build the frontend project:
     
-  ('''bash
+  '''bash
     
       - (cd frontend)
         
