@@ -35,7 +35,7 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
 
 
 ## Setup Instructions
-1. Networking Setup (VPC & Subnets)
+**1. Networking Setup (VPC & Subnets)**
   - Create a new VPC.
   - Add a public subnet (for EC2) and a private subnet (for RDS).
   - Attach an Internet Gateway to the VPC.
@@ -44,7 +44,7 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   - Private subnet has no direct internet access.
   
 
-2. EC2 Instance for Backend
+**2. EC2 Instance for Backend**
   - Launch an EC2 instance in the public subnet.
   - SSH into the instance.
   - Install Docker
@@ -71,7 +71,7 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
    ![Screenshot](Docs/backend.png)
 
 
-3. RDS PostgreSQL Setup
+**3. RDS PostgreSQL Setup**
   - Create an RDS PostgreSQL instance in the private subnet.
   - Ensure security group allows inbound connections from the EC2 instance.
   - Connect from EC2 using:
@@ -100,7 +100,7 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
 ![Screenshot](Docs/RDS.png)
 Notes: user detailes loaded on db
 
-4. Hosting Frontend on S3
+**4. Hosting Frontend on S3**
   - Build the frontend project:
     
   (```bash
@@ -118,7 +118,7 @@ Notes: user detailes loaded on db
     ![Screenshot](Docs/Frontend-login.png)
 Notes: User login successfull
 
-5. Integration
+**5. Integration**
   - Update frontend API URLs to point to the EC2 backend (http://<EC2-public-ip>:5000).
   - Ensure security groups and CORS policies allow communication between frontend and backend
     
