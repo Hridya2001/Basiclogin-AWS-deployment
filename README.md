@@ -65,6 +65,7 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   Or
   node server.js
 
+  Mentioning the screenshot of the backend running on port http://65.2.141.28:5000 
    ![Screenshot](Docs/backend.png)
 **Notes: backend is running on http://65.2.141.28:5000**
 
@@ -102,39 +103,16 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
     
 
 ## Errors Faced & Troubleshooting
-1. EC2 Instance Not Accessible via SSH
-
-  Cause: Security group missing inbound rule for port 22.
-  
-  Solution: Added SSH (port 22) rule for my IP in EC2 security group.
-
-2. Backend Not Reachable from Frontend
-  
-  Cause: EC2 security group missing inbound rule for port 5000.
-  
-  Solution: Added HTTP (port 5000) rule for 0.0.0.0/0 (for testing).
-  
-3. RDS Connection Refused
-
-  Cause: RDS security group not allowing inbound traffic from EC2.
-  
-  Solution: Modified RDS security group to allow inbound PostgreSQL (port 5432) from EC2’s security group.
-
-4. CORS Errors in Frontend
-
-  Cause: Backend did not allow requests from S3 frontend domain.
-  
-  Solution: Enabled CORS in backend server for S3 bucket URL.
-
-5. Database Table Not Found
-
-  Cause: user table was not created before running backend.
-  
-  Solution: Manually created the required table in PostgreSQL.
-
+| Issue                            | Cause                                              | Solution                                                         |
+|-----------------------------------|---------------------------------------------------|------------------------------------------------------------------|
+| EC2 Instance Not Accessible via SSH | Security group missing inbound rule for port 22    | Added SSH (port 22) rule for my IP in EC2 security group         |
+| Backend Not Reachable from Frontend | EC2 security group missing inbound rule for 5000   | Added HTTP (port 5000) rule for 0.0.0.0/0 (for testing)          |
+| RDS Connection Refused             | RDS SG not allowing inbound from EC2               | Allowed PostgreSQL (5432) from EC2’s security group              |
+| CORS Errors in Frontend            | Backend did not allow S3 domain                    | Enabled CORS for S3 bucket URL                                   |
+| Database Table Not Found           | `user` table not created before running backend    | Manually created the required table in PostgreSQL                |
 
 ## Credits
-**Original repository cloned from [friend’s repo link here].**
+**Original repository cloned from [https://github.com/sree33445/basiclogin.git].**
 
 **AWS documentation and tutorials.**
 
