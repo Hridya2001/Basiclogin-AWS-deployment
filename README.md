@@ -93,12 +93,11 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
     id SERIAL PRIMARY KEY,
     name VARCHAR(100),
     email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL
-  );
+    password VARCHAR(255) NOT NULL);
 
     
 
-     ![Screenshot](Docs/RDS.png)
+![Screenshot](Docs/RDS.png)
 Notes: user detailes loaded on db
 
 4. Hosting Frontend on S3
