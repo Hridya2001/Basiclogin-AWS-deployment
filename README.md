@@ -109,7 +109,7 @@ Notes: user detailes loaded on db
         
       - (npm run build)
         
-      - (Create an S3 bucket (e.g., my-bucket-frontend-2001).
+      - (Create an S3 bucket (e.g., my-bucket-frontend-2001).```
   
   - Upload the build files to the bucket.
   - Enable static website hosting.
