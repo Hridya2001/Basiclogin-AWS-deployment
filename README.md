@@ -50,13 +50,13 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   - Install Docker
   - Clone the GitHub repository:
     
-  ```bash
+  bash
   
        (git clone <https://github.com/sree33445/basiclogin.git>)
   
   - Build and run the backend:
     
-  ```bash
+  bash
          (cd backend)
        
          (docker build -t backend-app .)
