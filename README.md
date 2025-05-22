@@ -78,15 +78,15 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
     
     '''bash
     
-      - (psql -h <RDS-endpoint> -U postgres -d postgres'''
+      - (psql -h <RDS-endpoint> -U postgres -d postgres''')
         
   - Create database and user table:
     
-    '''bash
+    '''sql
     
       - (CREATE DATABASE myappdb;)
     
-      - (\c myappdb
+      - (\c myappdb)
         
     -- Create 'user' table as per backend requirements
 
