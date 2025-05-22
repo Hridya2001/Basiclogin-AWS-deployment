@@ -75,18 +75,16 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   - Create an RDS PostgreSQL instance in the private subnet.
   - Ensure security group allows inbound connections from the EC2 instance.
   - Connect from EC2 using:
-    
     (```bash
     
-       (psql -h <RDS-endpoint> -U postgres -d postgres```)
+    (psql -h <RDS-endpoint> -U postgres -d postgres```)
         
   - Create database and user table:
-    
     (```sql
     
-       (CREATE DATABASE myappdb;)
+    (CREATE DATABASE myappdb;)
     
-       (\c myappdb```)
+    (\c myappdb```)
         
     -- Create 'user' table as per backend requirements
 
