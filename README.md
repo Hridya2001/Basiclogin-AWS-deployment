@@ -119,7 +119,7 @@ Notes: user detailes loaded on db
 Notes: User login successfull
 
 **5. Integration**
-  - Update frontend API URLs to point to the EC2 backend (http://<EC2-public-ip>:5000).
+  - Update frontend API URLs to point to the EC2 backend (http://*****<EC2-public-ip>:5000).
   - Ensure security groups and CORS policies allow communication between frontend and backend
     
 
