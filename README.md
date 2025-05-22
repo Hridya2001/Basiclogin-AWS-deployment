@@ -90,7 +90,8 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
 Notes: user detailes loaded on db
 
 4. Hosting Frontend on S3
-  - Build the frontend project: 
+  - Build the frontend project:
+    
     bash
     
       - (cd frontend)
