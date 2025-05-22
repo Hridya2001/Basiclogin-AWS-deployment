@@ -56,11 +56,15 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   - Build and run the backend:
     
   bash
-       -  cd backend
-       -  docker build -t backend-app .
-       -  docker run -d -p 5000:5000 backend-app
+       -  (cd backend)
+       
+       -  (docker build -t backend-app .)
+       
+       -  (docker run -d -p 5000:5000 backend-app)
+       
       Or
-       -  node server.js
+      
+       -  (node server.js)
 
   Mentioning the screenshot of the backend running on port http://65.2.141.28:5000 
    ![Screenshot](Docs/backend.png)
@@ -70,11 +74,15 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   - Create an RDS PostgreSQL instance in the private subnet.
   - Ensure security group allows inbound connections from the EC2 instance.
   - Connect from EC2 using:
-      -psql -h <RDS-endpoint> -U postgres -d postgres
+    
+      - (psql -h <RDS-endpoint> -U postgres -d postgres)
+        
   - Create database and user table:
     
-      -CREATE DATABASE myappdb;
-      -\c myappdb
+      - (CREATE DATABASE myappdb;)
+    
+      - (\c myappdb)
+        
     -- Create 'user' table as per backend requirements
 
      ![Screenshot](Docs/RDS.png)
@@ -83,9 +91,12 @@ Notes: user detailes loaded on db
 4. Hosting Frontend on S3
   - Build the frontend project: 
     bash
-      - cd frontend
-      - npm run build
-      - Create an S3 bucket (e.g., my-bucket-frontend-2001).
+    
+      - (cd frontend)
+        
+      - (npm run build)
+        
+      - (Create an S3 bucket (e.g., my-bucket-frontend-2001).)
   
   - Upload the build files to the bucket.
   - Enable static website hosting.
