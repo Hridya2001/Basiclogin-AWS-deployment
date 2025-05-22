@@ -76,13 +76,13 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   - Ensure security group allows inbound connections from the EC2 instance.
   - Connect from EC2 using:
     
-      - (psql -h <RDS-endpoint> -U postgres -d postgres)
+      - ('''psql -h <RDS-endpoint> -U postgres -d postgres''')
         
   - Create database and user table:
     
-      - (CREATE DATABASE myappdb;)
+      - ('''CREATE DATABASE myappdb;''')
     
-      - (\c myappdb)
+      - ('''\c myappdb''')
         
     -- Create 'user' table as per backend requirements
 
@@ -92,9 +92,9 @@ Notes: user detailes loaded on db
 4. Hosting Frontend on S3
   - Build the frontend project:
     
-    bash
+  ('''bash
     
-      - ('''cd frontend)
+      - (cd frontend)
         
       - (npm run build)
         
