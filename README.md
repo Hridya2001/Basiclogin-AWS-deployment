@@ -90,6 +90,8 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
         
     -- Create 'user' table as per backend requirements
 
+    
+
      ![Screenshot](Docs/RDS.png)
 Notes: user detailes loaded on db
 
