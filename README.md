@@ -105,7 +105,7 @@ Notes: user detailes loaded on db
     
   (```bash
     
-       (cd frontend)
+       cd frontend
         
        (npm run build)
         
@@ -134,9 +134,9 @@ Notes: User login successfull
 
 
 ## Credits
-**Original repository cloned from https://github.com/sree33445/basiclogin.git.**
+**Original repository cloned from 👉 https://github.com/sree33445/basiclogin.git.**
 
-AWS documentation and tutorials.
+Thanks to the AWS documentation and community tutorials for the guidance and support in building this architecture.
 
 
 
