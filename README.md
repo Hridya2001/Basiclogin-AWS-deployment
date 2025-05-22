@@ -134,7 +134,7 @@ Notes: User login successfull
 
 
 ## Credits
-**Original repository cloned from [https://github.com/sree33445/basiclogin.git].**
+**Original repository cloned from https://github.com/sree33445/basiclogin.git.**
 
 AWS documentation and tutorials.
 
