@@ -50,17 +50,16 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
   - Install Docker
   - Clone the GitHub repository:
     
-  bash
-      git clone <https://github.com/sree33445/basiclogin.git>
+  bash: git clone <https://github.com/sree33445/basiclogin.git>
   
   - Build and run the backend:
     
   bash
-  cd backend
-  docker build -t backend-app .
-  docker run -d -p 5000:5000 backend-app
-  Or
-  node server.js
+      cd backend
+      docker build -t backend-app .
+      docker run -d -p 5000:5000 backend-app
+      Or
+      node server.js
 
   Mentioning the screenshot of the backend running on port http://65.2.141.28:5000 
    ![Screenshot](Docs/backend.png)
