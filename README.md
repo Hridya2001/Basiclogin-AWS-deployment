@@ -68,7 +68,7 @@ PostgreSQL RDS instance deployed in a private subnet. Only accessible from withi
          node server.js
 
   Mentioning the screenshot of the backend running on port http://65.2.141.28:5000 
-   ![Screenshot](Docs/backend.png)
+   ![Screenshot](Docs/Backend.png)
 
 
 **3. RDS PostgreSQL Setup**
