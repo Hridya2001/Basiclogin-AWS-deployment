@@ -103,7 +103,7 @@ Notes: user detailes loaded on db
 **4. Hosting Frontend on S3**
   - Build the frontend project:
     
-  (```bash
+  ```bash
     
        cd frontend
         
